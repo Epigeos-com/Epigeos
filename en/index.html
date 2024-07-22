@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Epigeos</title>
+        <script src="/scripts.js?ver=0"></script>
+        <link rel="stylesheet" href="/styles.css?ver=0">
+        <link rel="stylesheet" href="/index.css?ver=0">
+        <link href="/assets/favicon.ico" rel="icon">
+    </head>
+    <body>
+        <div style="display: inline-block; width: 46vw; vertical-align: top;">
+            <h1>Welcome to Epigeos</h1>
+            <h4>I'm Kirki, I make some apps and websites and stuff</h4>
+            <h4>Enjoy or something!</h4>
+            
+            <div id="applist">
+                <div class="diamondDiv" onclick="window.location.href='/hydor/reo'">
+                    <img src="/assets/reo.svg" alt="Icon - Reo - Calendar">
+                    <p class="top left">Reo</p>
+                    <p class="top right">Attic calendar</p>
+                </div>
+                <div class="diamondDiv" onclick="window.location.href='/anemos/psittakos'">
+                    <img src="/assets/psittakos.svg" alt="Icon - Psittakos - Calendar">
+                    <p class="top left">Psittakos</p>
+                    <p class="top right">Language</p>
+                </div>
+            </div>
+        </div>
+        <div id="diamond" style="display: inline-flex; width: 45vw; height: calc(98vh - 2 * var(--contentMargin)); margin-left: var(--contentMargin)">
+            <div class="diamondDiv" onclick="window.location.href='/pyr'" style="transform: translate(calc(78 * var(--baseDiamondUnit)), calc(-26 * var(--baseDiamondUnit))) rotate(45deg) scale(.7);">
+                <p class="pos1">Entertainment</p>
+                <img src="/assets/pyr_0.svg" alt="Icon - Pyr - Entertainment">
+            </div>
+            <div class="diamondDiv" onclick="window.location.href='/hydor'">
+                <img src="/assets/unknown_0.svg" alt="Icon - Hydor - Utility">
+                <p>Utility</p>
+            </div>
+            <div class="diamondDiv" onclick="window.location.href='/anemos'">
+                <p class="pos1">Learning</p>
+                <img src="/assets/anemos_0.svg" alt="Icon - Anemos - Learning">
+            </div>
+            <div class="diamondDiv" onclick="window.location.href='ge'" style="transform: translate(calc(-78 * var(--baseDiamondUnit)), calc(26 * var(--baseDiamondUnit))) rotate(45deg) scale(.7);">
+                <img src="/assets/ge_0.svg" alt="Icon - Ge - Other">
+                <p>Other</p>
+            </div>
+        </div>
+    </body>
+</html>
+
+<script>
+    createNavbar();
+
+    if (navigator.languages.includes('pl') || navigator.languages.includes('pl-PL')){
+        document.body.innerHTML = '<p>Prawdopodobnie szukasz <a href="https://zsipkz.epigeos.com">zsipkz.epigeos.com</a></p>';
+    }
+</script>

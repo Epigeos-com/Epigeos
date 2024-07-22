@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html style="--backgroundColor: #1a0d04;">
+    <head>
+        <title>Ge - Epigeos</title>
+        <script src="/scripts.js?ver=0"></script>
+        <link rel="stylesheet" href="/styles.css?ver=0">
+        <link rel="stylesheet" href="/element.css?ver=0">
+        <link href="/assets/favicon.ico" rel="icon">
+    </head>
+    <body>
+        <div id="header">
+            <img src="/assets/ge.svg" alt="Icon - Ge - Other">
+            <h1>Ge</h1>
+            <h3>Other</h3>
+
+            <div>
+                <a onclick="checkHash('#Apps')">Apps</a>
+                <a onclick="checkHash('#Description')">Description</a>
+            </div>
+        </div>
+        <div id="Apps">
+            <div class="app" onclick="window.location.href='/ge/epigeos'">
+                <img src="/assets/unknown.svg" alt="Icon - Epigeos">
+                <div>
+                    <h2>Epigeos</h2>
+                    <p>I wonder what that could be...</p>
+                </div>
+            </div>
+        </div>
+        <div id="Description">
+            <p>Ge (grc. γῆ - earth) is the groud for all apps that don't fit other categories!</p>
+            <p>I guess you'll have to look app by app to know the purpose.</p>
+        </div>
+    </body>
+</html>
+
+<script>
+    createNavbar();
+    checkHash();
+</script>

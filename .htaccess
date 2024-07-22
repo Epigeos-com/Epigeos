@@ -1,0 +1,16 @@
+RewriteEngine On
+DirectorySlash off
+
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://epigeos.com/$1 [L,R=301,NE]
+
+ErrorDocument 404 /404
+
+RewriteRule ^([^.]+)$ /$1.html
+
+<FilesMatch "^(database\.txt)|(\.log)$">
+    Require all denied
+</FilesMatch>
+<FilesMatch "\.(woff2)|(ttf)|(svg)$">
+    Header set Cache-Control "max-age=31536000, public"
+</FilesMatch>

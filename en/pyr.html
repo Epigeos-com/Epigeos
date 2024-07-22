@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html style="--backgroundColor: #1a0604;">
+    <head>
+        <title>Pyr - Epigeos</title>
+        <script src="/scripts.js?ver=0"></script>
+        <link rel="stylesheet" href="/styles.css?ver=0">
+        <link rel="stylesheet" href="/element.css?ver=0">
+        <link href="/assets/favicon.ico" rel="icon">
+    </head>
+    <body>
+        <div id="header">
+            <img src="/assets/pyr.svg" alt="Icon - Pyr - Entertainment">
+            <h1>Pyr</h1>
+            <h3>Entertainment</h3>
+
+            <div>
+                <a onclick="checkHash('#Apps')">Apps</a>
+                <a onclick="checkHash('#Description')">Description</a>
+            </div>
+        </div>
+        <div id="Apps">
+            <h3>Nothing's here yet, ain't that sad?</h3>
+        </div>
+        <div id="Description">
+            <p>Pyr (grc. πῦρ - fire) can help you spend your time in quite a hot way!</p>
+            <p>That's quite the fiery introduction, but the purpose of this series is to provide a fun way to spend your time.</p>
+        </div>
+    </body>
+</html>
+
+<script>
+    createNavbar();
+    checkHash();
+</script>
