@@ -13,8 +13,10 @@
         width: 20vw;
     }
     #content{
-        height: calc(20vw + var(--contentMargin));
+        height: auto;
+        min-height: calc(20vw + var(--contentMargin));
         margin-left: calc(20vw + 2 * var(--contentMargin));
+
         padding-bottom: var(--contentMargin);
 
         h1{
@@ -42,8 +44,12 @@
     }
 }
 #Info{
-    margin: 0px 12vw;
+    margin: 0px;
     margin-top: var(--contentMargin);
+    @media only screen and (min-width: 1083px) {
+        margin: 0px 12vw;
+        margin-top: var(--contentMargin);
+    }
 }
 #Download{
     display: none;

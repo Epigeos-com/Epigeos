@@ -8,25 +8,19 @@
     src: url(assets/Baloo2.ttf) format('truetype');
     font-display: auto;
 }
-@font-face {
-    font-family: OpenDyslexic;
-    src: url(assets/OpenDyslexic.woff2) format('woff2');
-    font-display: auto;
-}
 :root{
-    --contentMargin: 2vw;
-    --baseUnit: 1.25vw;
-    @media only screen and (min-width: 1081px) {
+    --contentMargin: calc(.7 * var(--baseUnit));
+    @media only screen and (min-width: 1083px) {
         --baseUnit: 37px;
     }
-    @media only screen and (max-width: 1080px) and (min-width: 721px) {
+    @media only screen and (max-width: 1082px) and (min-width: 723px) {
         --baseUnit: 55px;
     }
-    @media only screen and (max-width: 720px) and (min-width: 0px) {
+    @media only screen and (max-width: 722px) {
         --baseUnit: 70px;
     }
     --baseFontSize: calc(var(--baseUnit) / 2);
-    --baseBorderRadius: 2vw;
+    --baseBorderRadius: calc(.7 * var(--baseUnit));
 
     --brightBackgroundColor: #1a990f;
     --backgroundColor: #061a04;
@@ -126,7 +120,7 @@ input[type=button]{
 #cookiesDiv{
     display: flex;
     justify-content: space-between;
-    position: absolute;
+    position: fixed;
     bottom: var(--contentMargin);
     left: var(--contentMargin);
     right: var(--contentMargin);
@@ -144,7 +138,7 @@ input[type=button]{
     display: flex;
     justify-content: space-between;
 
-    position: absolute;
+    position: fixed;
     top: 0px;
     left: 0px;
     width: 100%;

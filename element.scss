@@ -44,10 +44,9 @@
 }
 #Apps{
     .app{
-        height: calc(15vw + 2 * var(--contentMargin));
+        height: auto;
+        min-height: calc(15vw + 2 * var(--contentMargin));
         position: relative;
-
-        //padding: var(--contentMargin) 0px;
 
         cursor: pointer;
 

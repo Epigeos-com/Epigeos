@@ -14,7 +14,10 @@ function createNavbar(){
         <div id="cookiesDiv">
             <p>This website uses cookies for bot protection and this agreement.</p><input type="button" onclick="acceptCookies()" value="Okie dokie">
         </div>`
-    if (document.cookie.includes('accessibility=')) document.documentElement.classList.add('accessibility');
+    if (document.cookie.includes('accessibility=')){
+        document.documentElement.classList.add('accessibility');
+        document.getElementById('accessibilityButtonImg').src = '/assets/accessibility-accessibility.svg';
+    }
 }
 function acceptCookies(){
     let date = new Date();
