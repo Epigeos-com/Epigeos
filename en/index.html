@@ -7,6 +7,14 @@
         <link rel="stylesheet" href="/index.css?ver=0">
         <link href="/assets/favicon.ico" rel="icon">
         <meta charset="UTF-8">
+        <script type="application/ld+json">
+            {
+                "@context" : "https://schema.org",
+                "@type" : "WebSite",
+                "name" : "Epigeos",
+                "url" : "https://epigeos.com/"
+            }
+        </script>
     </head>
     <body>
         <div id="header">
@@ -50,8 +58,4 @@
 
 <script>
     createNavbar();
-
-    if (navigator.languages.includes('pl') || navigator.languages.includes('pl-PL')){
-        document.body.innerHTML = '<p>Prawdopodobnie szukasz <a href="https://zsipkz.epigeos.com">zsipkz.epigeos.com</a></p>';
-    }
 </script>
