@@ -6,12 +6,13 @@
 
 #header{
     display: inline-block;
-    width: 46vw;
+    width: calc(50vw - var(--contentMargin) - 2px);
     vertical-align: top;
 
     @media only screen and (max-width: 1082px) {
         display: block;
-        width: 100vw;
+        width: calc(100vw + var(--contentMargin));
+        margin-left: calc(var(--contentMargin) * -1);
     }
 }
 #applist{
@@ -22,7 +23,7 @@
     grid-auto-flow: column;
     justify-content: start;
 
-    position: absolute;
+    position: fixed;
     bottom: var(--contentMargin);
     left: var(--contentMargin);
 
@@ -37,16 +38,15 @@
     justify-content: center;
     align-items: center;
 
-    width: 45vw;
-    height: calc(98vh - 2 * var(--contentMargin));
-    padding-top: 1vw;
-    margin-left: var(--contentMargin);
+    width: calc(50vw - var(--contentMargin) - 2px);
+    height: max(calc((48 * var(--baseDiamondUnit) * 2) + (3 * var(--baseDiamondUnit))), calc(100vh - 4 * var(--contentMargin)));
+    margin: var(--contentMargin) 0px;
 
     @media only screen and (max-width: 1082px) {
         display: flex;
-        width: calc(100vw - 2 * var(--contentMargin));
-        height: calc(92 * var(--baseDiamondUnit));
-        margin: var(--contentMargin);
+        width: calc(100vw + var(--contentMargin));
+        height: calc((48 * var(--baseDiamondUnit) * 2) + (3 * var(--baseDiamondUnit)));
+        margin-left: calc(var(--contentMargin) * -1);
     }
 
     div{

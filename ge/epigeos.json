@@ -1,0 +1,13 @@
+{
+    "app_name": "Epigeos",
+    "repo_name": "Epigeos",
+    "platforms": "<a href=\"https://epigeos.com\">https://epigeos.com</a>",
+    "show_why_not_other_platforms": false,
+    "languages": "EN",
+    "show_contribute_to_languages": false,
+    "status": "Maintained",
+    "source_code": "<a href=\"https://github.com/Epigeos-com/Epigeos\">[Github]</a>",
+    "short_description": "I wonder what this could be",
+    "has_downloads": false,
+    "description": "<h4>Credits</h4>\n<p><a href=\"https://github.com/EkType/Baloo2\">Baloo2</a>, one of the best fonts to ever exist</p>\n<p><a href=\"https://www.google.com/search?q=Juan+Pablo+del+Peral\">Juan Pablo del Peral</a> - <a href=\"https://piazzolla.huertatipografica.com/\">Piazzolla</a>, one of the best fonts to ever exist</p>"
+}

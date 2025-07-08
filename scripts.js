@@ -7,7 +7,7 @@ function createNavbar(){
             <a href="/hydor"><p>Hydor</p></a>
             <a href="/ge"><p>Ge</p></a>
             <div id="accessibilityButton" onclick="toggleAccessibility()">
-                <img id="accessibilityButtonImg" src="/assets/accessibility.svg">
+                <img id="accessibilityButtonImg" src="/assets/accessibility.svg" alt="accesibility">
             </div>
         </div>`;
     if (!document.cookie.includes('accept=')) document.body.innerHTML += `
@@ -47,70 +47,45 @@ function checkHash(setHash = null){
 
     const hash = window.location.hash;
     if (hash == '');
-    else if (hash == '#Info'){
-        document.getElementById('Info').style.display = 'block';
-        document.getElementById('Download').style.display = 'none';
-    }else if (hash == '#Download'){
-        document.getElementById('Info').style.display = 'none';
-        document.getElementById('Download').style.display = 'block';
-    }
 
-    else if (hash == '#Apps'){
+    else if (hash == '#Description'){
+        document.getElementById('Description').style.display = 'block';
+        if (document.getElementById('Download')) document.getElementById('Download').style.display = 'none'
+        else document.getElementById('Apps').style.display = 'none';
+    }else if (hash == '#Download'){
+        document.getElementById('Description').style.display = 'none';
+        document.getElementById('Download').style.display = 'block';
+    }else if (hash == '#Apps'){
         document.getElementById('Apps').style.display = 'block';
         document.getElementById('Description').style.display = 'none';
-    }else if (hash == '#Description'){
-        document.getElementById('Apps').style.display = 'none';
-        document.getElementById('Description').style.display = 'block';
     }
 }
 
-function downloadVersion(zipball_url, tag_name){
+function downloadVersion(download_url, name){
     const link = document.createElement('a');
-    link.href = zipball_url;
-    link.download = 'Reo-' + tag_name + '.zip';
+    link.href = download_url;
+    link.download = 'Reo-' + name;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-
-    checkHash('#Info');
 }
-function listDownloads(repo, autoDetect = false){
-    const downloads = document.getElementById('downloads');
-    downloads.innerHTML = '';
+function listDownloads(repo){
+    const download = document.getElementById('Download');
+    download.innerHTML = '';
 
-    const language = document.getElementById('language');
-    const platform = document.getElementById('platform');
-    if (autoDetect){
-        language.value = navigator.language.substring(0, 2);
-
-        const userAgent = window.navigator.userAgent;
-        if (userAgent.includes('Windows')){
-            platform.value = 'Windows';
-        }else if (userAgent.includes('Android')){
-            platform.value = 'Android';
-        }else if (userAgent.includes('Linux')){
-            platform.value = 'Linux';
-        }else if (userAgent.includes('iOS')){
-            platform.value = 'iOS';
-        }else if (userAgent.includes('Mac OS')){
-            platform.value = 'Mac';
+    fetch('https://api.github.com/repos/Epigeos-com/' + repo + '/releases/latest', {
+        method: "GET",
+        headers: {
+            "Accept": "application/vnd.github+json",
+            "Authorization": "Bearer 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"
         }
-        console.log(userAgent);
-    }
-
-    let html = "";
-    fetch('https://api.github.com/repos/Epigeos-com/' + repo + '/releases').then(response => {
-        const responseJson = response.json();
-        if (responseJson[0]){
-            forEach(release => {
-                console.log(release);
-                if (release.tag_name.startsWith(language.value + platform.value))
-                html += `<p onclick="downloadVersion('${release.zipball_url}', '${release.tag_name}')">${release.tag_name}</p>`
+    }).then(response => response.json()).then(responseJson => {
+        if (responseJson.assets){
+            responseJson.assets.forEach(asset => {
+                download.innerHTML += `<p onclick="downloadVersion('${asset.browser_download_url}', '${asset.name}')">${asset.name}</p>`
             });
         }else{
-            html = '<h3>No downloads available</h3>'
+            download.innerHTML = '<h3 style="margin-top: var(--contentMargin)">This app doesn\'t seem released yet</h3>'
         }
-    }).then(() => 
-        downloads.innerHTML += html
-    );
+    });
 }

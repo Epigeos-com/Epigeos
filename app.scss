@@ -43,7 +43,7 @@
         }
     }
 }
-#Info{
+#Description{
     margin: 0px;
     margin-top: var(--contentMargin);
     @media only screen and (min-width: 1083px) {
@@ -53,14 +53,6 @@
 }
 #Download{
     display: none;
-    
-    #options{
-        margin-top: var(--contentMargin);
 
-        display: flex;
-        justify-content: space-between;
-    }
-    #downloads{
-        margin-top: var(--contentMargin);
-    }
+    margin-top: var(--contentMargin);
 }

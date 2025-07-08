@@ -6,7 +6,11 @@ RewriteRule ^(.*)$ https://epigeos.com/$1 [L,R=301,NE]
 
 ErrorDocument 404 /404
 
-RewriteRule ^([^.]+)$ /$1.html
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^([^.]+)$ /$1.html [L]
+RewriteCond %{REQUEST_FILENAME}.html !-f
+RewriteRule ^([^./]+)$ /element.php?p=$1
+RewriteRule ^([^./]+/[^./]+)$ /app.php?p=$1 [L]
 
 <FilesMatch "\.(woff2)|(ttf)|(svg)$">
     Header set Cache-Control "max-age=31536000, public"

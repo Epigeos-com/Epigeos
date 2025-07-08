@@ -1,0 +1,13 @@
+{
+    "app_name": "Reo",
+    "repo_name": "Reo",
+    "platforms": "Android, Linux, Windows",
+    "show_why_not_other_platforms": true,
+    "languages": "EN",
+    "show_contribute_to_languages": false,
+    "status": "In making",
+    "source_code": "<a href=\"https://github.com/Epigeos-com/Reo\">[Github]</a>",
+    "short_description": "Tired of those pesky Chrisitan and Roman norms? Why not use some other calendars?<br/>For real tho, it's just a better system and that <s>opinion</s> fact is totally not biased by my love for ancient Greece.",
+    "has_downloads": true,
+    "description": "<p>Reo (grc. ῥέω - to flow) helps you track the flow of time in various calendars and with some astronomical info!</p>\n<p>So far there's Gregorian and Attic calendars, but who knows what will come later...</p>\n<p>The attic calendar is a solar-lunar calendar that actually bases the time on nature.</p>\n<h4>Credits</h4>\n<p><a href=\"https://www.google.com/search?q=Jean+Meeus+books\">Jean Meeus</a> - <a href=\"https://www.google.com/search?q=Jean+Meeus+astronomical+algorithms\">Astronomical Algorithms</a>, without it I would never find all the nessecary formulae</p>\n<p><a href=\"https://wikipedia.org\">Wikipedia</a> - <a href=\"https://en.wikipedia.org/wiki/Attic_calendar\">Attic calendar</a> and all sources used to write it</p>\n<p><a href=\"https://www.google.com/search?q=Juan+Pablo+del+Peral\">Juan Pablo del Peral</a> - <a href=\"https://piazzolla.huertatipografica.com/\">Piazzolla</a>, one of the best fonts to ever exist</p>\n<h4>Whitepaper</h4>\n<p>To be released soon</p>"
+}

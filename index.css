@@ -1,1 +1,58 @@
-@media only screen and (min-width: 1083px){h1,h4{text-align:left}}#header{display:inline-block;width:46vw;vertical-align:top}@media only screen and (max-width: 1082px){#header{display:block;width:100vw}}#applist{--baseDiamondUnit: calc(.09 * var(--baseUnit));display:grid;grid-auto-flow:column;justify-content:start;position:absolute;bottom:var(--contentMargin);left:var(--contentMargin);width:100%}#diamond{--baseDiamondUnit: calc(.16 * var(--baseUnit));display:inline-flex;justify-content:center;align-items:center;width:45vw;height:calc(98vh - 2*var(--contentMargin));padding-top:1vw;margin-left:var(--contentMargin)}@media only screen and (max-width: 1082px){#diamond{display:flex;width:calc(100vw - 2*var(--contentMargin));height:calc(92*var(--baseDiamondUnit));margin:var(--contentMargin)}}#diamond div{transform:rotate(45deg) scale(0.7)}#diamond div p{width:100%}#diamond div p.pos1{transform:translateY(-0.5em)}#diamond div p:not(.pos1){transform:translateY(0.25em)}
+@media only screen and (min-width: 1083px) {
+  h1, h4 {
+    text-align: left;
+  }
+}
+#header {
+  display: inline-block;
+  width: calc(50vw - var(--contentMargin) - 2px);
+  vertical-align: top;
+}
+@media only screen and (max-width: 1082px) {
+  #header {
+    display: block;
+    width: calc(100vw + var(--contentMargin));
+    margin-left: calc(var(--contentMargin) * -1);
+  }
+}
+
+#applist {
+  --baseDiamondUnit: calc(.09 * var(--baseUnit));
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: start;
+  position: fixed;
+  bottom: var(--contentMargin);
+  left: var(--contentMargin);
+  width: 100%;
+}
+
+#diamond {
+  --baseDiamondUnit: calc(.16 * var(--baseUnit));
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(50vw - var(--contentMargin) - 2px);
+  height: max(48 * var(--baseDiamondUnit) * 2 + 3 * var(--baseDiamondUnit), 100vh - 4 * var(--contentMargin));
+  margin: var(--contentMargin) 0px;
+}
+@media only screen and (max-width: 1082px) {
+  #diamond {
+    display: flex;
+    width: calc(100vw + var(--contentMargin));
+    height: calc(48 * var(--baseDiamondUnit) * 2 + 3 * var(--baseDiamondUnit));
+    margin-left: calc(var(--contentMargin) * -1);
+  }
+}
+#diamond div {
+  transform: rotate(45deg) scale(0.7);
+}
+#diamond div p {
+  width: 100%;
+}
+#diamond div p.pos1 {
+  transform: translateY(-0.5em);
+}
+#diamond div p:not(.pos1) {
+  transform: translateY(0.25em);
+}/*# sourceMappingURL=index.css.map */
